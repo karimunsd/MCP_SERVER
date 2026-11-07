@@ -1,0 +1,76 @@
+NAME: SAYYAD KARIMUN
+Roll No: 261FB04034
+
+
+# Hello MCP
+
+This project is a simple Model Context Protocol (MCP) example configured for VS Code.
+
+## Project purpose
+
+It provides a minimal local MCP server setup using Python and the standard input/output transport. The server can be launched from VS Code using the configuration in `.vscode/mcp.json`.
+
+## Files
+
+- `.vscode/mcp.json` — VS Code server configuration
+- `server.py` — MCP server implementation
+- `.venv/` — Python virtual environment
+
+## Prerequisites
+
+- Python 3.10 or newer
+- VS Code
+- Access to a Python environment for the project
+
+## Setup
+
+Open a terminal in the project root and create a virtual environment:
+
+```powershell
+cd "c:\Users\karim\OneDrive\Documents\HELLO_MCP"
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+Install any required Python dependencies for your MCP server implementation:
+
+```powershell
+pip install -r requirements.txt
+```
+
+If `requirements.txt` is not present yet, install the packages required by `server.py` manually.
+
+## Run the server
+
+```powershell
+.venv\Scripts\python.exe server.py
+```
+
+## VS Code MCP configuration
+
+The project includes this configuration in `.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "helloMcp": {
+      "type": "stdio",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": ["server.py"]
+    }
+  }
+}
+```
+
+This tells VS Code to launch the Python interpreter from the local virtual environment and run `server.py` as the MCP server.
+
+## Notes
+
+This project is intended as a starting point for experimenting with MCP in VS Code. You can extend the server by adding tools, resources, or custom logic in `server.py`.
+
+## License
+
+This project is provided for learning and experimentation.
+````
+
+If you want, I can also create a starter `server.py` file for this project.
